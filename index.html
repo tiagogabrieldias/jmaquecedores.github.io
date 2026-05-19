@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>JM Aquecedores | Instalação, Manutenção e Conversão</title>
+  <meta name="description" content="Instalação, manutenção e assistência técnica de aquecedores, fogões e tubulação no Rio de Janeiro." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://jmaquecedores.com.br/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="JM Aquecedores" />
+  <meta property="og:description" content="Assistência técnica especializada em aquecedores." />
+  <meta property="og:image" content="assets/hero.jpg" />
+
+  <link rel="icon" href="assets/favicon.jpg" />
+  <meta name="google-site-verification" content="COLE_AQUI" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXX');
+  </script>
+
+  <script>
+    !function(f,b,e,v,n,t,s){
+      if(f.fbq)return;
+      n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;
+      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+      t=b.createElement(e);t.async=!0;t.src=v;
+      s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)
+    }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'PIXEL_ID');
+    fbq('track', 'PageView');
+  </script>
+
+  <style>
+    :root{
+      --primary:#1f76bf;
+      --primary-dark:#155d98;
+      --accent:#ffbc13;
+      --accent-soft:#ffefc1;
+      --dark:#111111;
+      --text:#1d1d1d;
+      --muted:#666666;
+      --light:#f6f6f6;
+      --card-shadow:0 0 10px 0 rgba(0,0,0,.5);
+      --shadow-soft:0 16px 40px rgba(0,0,0,.08);
+      --container:1200px;
+      --radius:6px;
+      --transition:400ms cubic-bezier(.16,.84,.44,1);
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:"Mukta",sans-serif;
+      background:#fff;
+      color:var(--text);
+      overflow-x:hidden;
+      line-height:1.55;
+    }
+    img{display:block;max-width:100%;height:auto}
+    a{text-decoration:none;color:inherit}
+    button{font:inherit}
+    ul{list-style:none}
+
+    .container{
+      width:100%;
+      max-width:var(--container);
+      margin:0 auto;
+      padding:0 24px;
+    }
+
+    .section{
+      padding:80px 0;
+      scroll-margin-top:110px;
+    }
+
+    .section-title{
+      font-size:clamp(2.1rem,3.8vw,3.4rem);
+      line-height:1.05;
+      color:var(--primary);
+      font-weight:700;
+      letter-spacing:-.03em;
+      margin-bottom:20px;
+    }
+
+    .section-subtitle{
+      font-size:1.15rem;
+      color:var(--muted);
+      max-width:760px;
+      margin:0 auto;
+    }
+
+    .reveal{
+      opacity:0;
+      transform:translateY(42px);
+      transition:900ms cubic-bezier(.16,.84,.44,1);
+      will-change:opacity,transform;
+    }
+
+    .reveal.active{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      html{scroll-behavior:auto}
+      *,*::before,*::after{
+        animation:none !important;
+        transition:none !important;
+      }
+      .reveal{opacity:1;transform:none}
+    }
+
+    /* HEADER */
+    .site-header{
+      position:relative;
+      z-index:50;
+      background:#fff;
+      padding:26px 0 18px;
+      transition:box-shadow var(--transition);
+    }
+
+    .site-header.scrolled{
+      box-shadow:0 10px 30px rgba(0,0,0,.08);
+    }
+
+    .header-wrap{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+    }
+
+    .logo{
+      flex:0 0 auto;
+      display:flex;
+      align-items:center;
+    }
+
+    .logo img{
+      width:264px;
+      height:auto;
+    }
+
+    .nav ul{
+      display:flex;
+      align-items:center;
+      gap:0;
+    }
+
+    .nav a{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:30px;
+      padding:0 35px;
+      color:#000;
+      font-size:16px;
+      font-weight:600;
+      text-transform:uppercase;
+      transition:color var(--transition), transform var(--transition), opacity var(--transition);
+    }
+
+    .nav a:hover{
+      color:#707070;
+      transform:translateY(-1px);
+    }
+
+    .menu-toggle{
+      display:none;
+      background:none;
+      border:none;
+      cursor:pointer;
+      width:42px;
+      height:42px;
+      padding:8px;
+    }
+
+    .menu-toggle span{
+      display:block;
+      width:100%;
+      height:2px;
+      background:#000;
+      margin:5px 0;
+      border-radius:2px;
+    }
+
+    /* HERO */
+    .hero{
+      position:relative;
+      min-height:570px;
+      display:flex;
+      align-items:center;
+      overflow:hidden;
+      background:#fff;
+    }
+
+    .hero-bg{
+      position:absolute;
+      inset:0;
+      z-index:1;
+    }
+
+    .hero-bg img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:top center;
+      animation:heroZoom 14s ease-out both;
+    }
+
+    .hero-overlay{
+      position:absolute;
+      inset:0;
+      z-index:2;
+      background:linear-gradient(90deg, rgba(255,255,255,.88) 0%, rgba(255,255,255,.74) 46%, rgba(255,255,255,0) 100%);
+      opacity:.58;
+    }
+
+    .hero::after{
+      content:'';
+      position:absolute;
+      inset:0;
+      z-index:3;
+      background:radial-gradient(circle at top right, rgba(143,212,0,.18), transparent 35%);
+    }
+
+    .hero-inner{
+      position:relative;
+      z-index:5;
+      width:100%;
+    }
+
+    .hero-content{
+      max-width:760px;
+      padding:76px 0 66px;
+    }
+
+    .hero h1{
+      color:var(--primary);
+      font-size:50px;
+      line-height:1.12;
+      font-weight:700;
+      letter-spacing:-.03em;
+      max-width:760px;
+      margin-bottom:30px;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:58px;
+      padding:0 30px;
+      border-radius:6px;
+      font-family:"Mukta",sans-serif;
+      font-size:20px;
+      font-weight:600;
+      transition:transform var(--transition), background var(--transition), color var(--transition), border-color var(--transition), box-shadow var(--transition);
+      cursor:pointer;
+      border:1px solid transparent;
+    }
+
+    .btn:hover{transform:translateY(-3px)}
+
+    .btn-primary{
+      background:var(--primary);
+      color:#fff;
+      box-shadow:0 8px 22px rgba(31,118,191,.2);
+    }
+
+    .btn-primary:hover{
+      background:var(--primary-dark);
+    }
+
+    .btn-outline{
+      background:transparent;
+      color:var(--primary);
+      border-color:rgba(31,118,191,.25);
+    }
+
+    .btn-outline:hover{
+      background:rgba(31,118,191,.06);
+    }
+
+    /* BENEFITS */
+    .benefits{
+      margin-top:-20px;
+      padding:40px 0 60px;
+      position:relative;
+      z-index:5;
+    }
+
+    .benefits-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:24px;
+    }
+
+    .benefit-card{
+      min-height:100%;
+      background:linear-gradient(180deg, var(--accent) 0%, rgba(255,188,19,.38) 100%);
+      border-radius:6px;
+      padding:50px 40px;
+      box-shadow:var(--card-shadow);
+      transition:transform var(--transition), box-shadow var(--transition);
+    }
+
+    .benefit-card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 18px 28px rgba(0,0,0,.18);
+    }
+
+    .benefit-icon{
+      width:54px;
+      height:54px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:34px;
+      line-height:1;
+      margin-bottom:13px;
+      color:var(--primary);
+    }
+
+    .benefit-card h3{
+      font-size:20px;
+      line-height:1.25;
+      font-weight:700;
+      color:var(--primary);
+      margin-bottom:10px;
+    }
+
+    .benefit-card p{
+      font-size:17px;
+      color:var(--text);
+      line-height:1.45;
+    }
+
+    /* BRANDS */
+    .brands{
+      padding:30px 0 30px;
+      background:#fff;
+      box-shadow:0 0 10px 0 rgba(0,0,0,.5);
+    }
+
+    .brands .section-title{
+      text-align:center;
+      margin-bottom:20px;
+    }
+
+    .brands-image{
+      display:flex;
+      justify-content:center;
+      margin-top:20px;
+    }
+
+    .brands-image img{
+      width:60%;
+      min-width:min(100%, 1024px);
+    }
+
+    /* ABOUT */
+    .about{
+      padding:80px 0 70px;
+      background:#fff;
+    }
+
+    .about-grid{
+      display:grid;
+      grid-template-columns:40% 60%;
+      gap:30px;
+      align-items:center;
+    }
+
+    .about-image img{
+      border-radius:6px;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .about-content{
+      padding-left:30px;
+    }
+
+    .about-content .section-title{
+      margin-bottom:18px;
+      text-align:left;
+    }
+
+    .about-content p{
+      color:var(--primary-dark);
+      font-size:22px;
+      line-height:1.45;
+      margin-bottom:18px;
+    }
+
+    /* SERVICES */
+    .services{
+      background:var(--accent);
+      padding:80px 0 80px;
+    }
+
+    .services .section-title{
+      text-align:center;
+      margin-bottom:10px;
+    }
+
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:24px;
+      margin-top:50px;
+    }
+
+    .service-card{
+      height:100%;
+      background:#fff;
+      border-radius:6px;
+      padding:0;
+      box-shadow:0 0 10px 0 rgba(45,146,207,.5);
+      overflow:hidden;
+      transition:transform var(--transition), box-shadow var(--transition);
+      position:relative;
+    }
+
+    .service-card:hover{
+      transform:translateY(-8px);
+      box-shadow:0 18px 35px rgba(45,146,207,.25);
+    }
+
+    .service-media{
+      width:100%;
+      background:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:20px 20px 0;
+    }
+
+    .service-media img{
+      width:min(100%,500px);
+      object-fit:contain;
+    }
+
+    .service-body{
+      padding:18px 40px 40px;
+    }
+
+    .service-body h3{
+      color:var(--primary);
+      font-size:23px;
+      line-height:1.2;
+      font-weight:700;
+      margin-bottom:10px;
+    }
+
+    .service-body p{
+      color:var(--dark);
+      font-size:17px;
+      line-height:1.55;
+      min-height:60px;
+      margin-bottom:18px;
+    }
+
+    .service-cta{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      min-height:48px;
+      padding:0 20px;
+      border-radius:5px;
+      background:#f7f9fb;
+      color:#000;
+      font-size:16px;
+      font-weight:700;
+      transition:transform var(--transition), background var(--transition), color var(--transition);
+    }
+
+    .service-cta:hover{
+      background:var(--primary);
+      color:#fff;
+      transform:translateY(-2px);
+    }
+
+    .service-cta svg{
+      width:18px;
+      height:18px;
+      fill:currentColor;
+      flex:0 0 auto;
+    }
+
+    /* CONTACT */
+    .contact{
+      padding:80px 0 80px;
+      background:#fff;
+    }
+
+    .contact .section-title{
+      text-align:center;
+      margin-bottom:30px;
+    }
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:24px;
+      margin-top:50px;
+      max-width:1200px;
+    }
+
+    .contact-item{
+      display:flex;
+      align-items:flex-start;
+      gap:13px;
+      padding:10px 0;
+    }
+
+    .contact-icon{
+      width:35px;
+      height:35px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex:0 0 auto;
+      color:var(--primary);
+      font-size:32px;
+      line-height:1;
+      margin-top:2px;
+    }
+
+    .contact-text h3{
+      color:var(--primary);
+      font-size:20px;
+      font-weight:400;
+      line-height:1.35;
+      margin-bottom:2px;
+    }
+
+    .contact-text p{
+      color:var(--dark);
+      font-size:21px;
+      line-height:1.35;
+    }
+
+    /* FOOTER */
+    .footer{
+      background:var(--primary-dark);
+      padding:40px 0;
+      text-align:center;
+    }
+
+    .footer img{
+      width:263px;
+      margin:0 auto 14px;
+    }
+
+    .footer p{
+      color:#fff;
+      font-size:16px;
+      font-weight:400;
+    }
+
+    /* WHATSAPP */
+    .whatsapp-button{
+      position:fixed;
+      right:24px;
+      bottom:24px;
+      width:68px;
+      height:68px;
+      border-radius:50%;
+      background:#25d366;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      z-index:999;
+      box-shadow:0 10px 35px rgba(37,211,102,.4);
+      animation:pulse 2.2s infinite;
+      transition:transform var(--transition), box-shadow var(--transition);
+    }
+
+    .whatsapp-button:hover{
+      transform:scale(1.08);
+      box-shadow:0 14px 42px rgba(37,211,102,.5);
+    }
+
+    .whatsapp-button svg{
+      width:32px;
+      height:32px;
+      fill:#fff;
+    }
+
+    @keyframes heroZoom{
+      from{transform:scale(1.03)}
+      to{transform:scale(1)}
+    }
+
+    @keyframes pulse{
+      0%{box-shadow:0 0 0 0 rgba(37,211,102,.55)}
+      70%{box-shadow:0 0 0 18px rgba(37,211,102,0)}
+      100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}
+    }
+
+    /* MOBILE */
+    @media (max-width: 1024px){
+      .nav a{padding:0 18px;font-size:15px}
+      .hero h1{font-size:44px}
+      .about-grid{grid-template-columns:1fr;gap:24px}
+      .about-content{padding-left:0}
+      .brands-image img{width:100%}
+      .contact-grid{grid-template-columns:1fr}
+    }
+
+    @media (max-width: 768px){
+      .site-header{padding:18px 0 14px}
+      .header-wrap{position:relative}
+      .logo img{width:210px}
+      .menu-toggle{display:inline-block}
+      .nav{
+        position:fixed;
+        top:0;
+        right:-100%;
+        width:min(350px, 88vw);
+        height:100vh;
+        background:#fff;
+        box-shadow:-20px 0 50px rgba(0,0,0,.18);
+        padding:90px 24px 24px;
+        transition:right var(--transition);
+        z-index:100;
+      }
+      .nav.active{right:0}
+      .nav ul{flex-direction:column;align-items:flex-start;gap:10px}
+      .nav a{
+        width:100%;
+        padding:10px 0;
+        color:#000;
+      }
+      .hero{min-height:700px}
+      .hero-bg img{object-position:center top}
+      .hero-overlay{
+        background:linear-gradient(90deg, rgba(255,255,255,.94) 0%, rgba(255,255,255,.82) 58%, rgba(255,255,255,.18) 100%);
+        opacity:.55;
+      }
+      .hero-content{padding:62px 0 50px;max-width:100%}
+      .hero h1{font-size:34px;max-width:100%}
+      .hero-actions{flex-direction:column}
+      .btn{width:100%;font-size:18px}
+      .benefits-grid,
+      .services-grid,
+      .contact-grid{
+        grid-template-columns:1fr;
+      }
+      .benefits{padding:24px 0 54px}
+      .benefit-card{padding:34px 24px}
+      .service-body{padding:18px 24px 30px}
+      .about,.services,.contact{padding:60px 0}
+      .section-title{font-size:2.1rem}
+      .about-content p{font-size:18px}
+      .contact-text p{font-size:18px}
+      .footer img{width:210px}
+    }
+
+    @media (max-width: 480px){
+      .hero{min-height:640px}
+      .hero h1{font-size:30px}
+      .section{padding:60px 0}
+      .brands{padding:24px 0}
+      .brands-image{padding:24px 0}
+      .brands .section-title,
+      .services .section-title,
+      .contact .section-title{text-align:center}
+      .contact-item{padding:4px 0}
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header" id="header">
+    <div class="container header-wrap">
+      <a href="#" class="logo" aria-label="JM Aquecedores">
+        <img src="assets/logo-topo.png" alt="JM Aquecedores" />
+      </a>
+
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" id="nav" aria-label="Menu principal">
+        <ul>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <picture class="hero-bg">
+      <source media="(max-width: 768px)" srcset="assets/hero-mobile.jpg" />
+      <img src="assets/hero.jpg" alt="JM Aquecedores" loading="eager" fetchpriority="high" />
+    </picture>
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-inner">
+      <div class="hero-content reveal active">
+        <h1>Conte com a JM Aquecedores para realizar serviços técnicos de qualidade</h1>
+        <div class="hero-actions">
+          <a
+            class="btn btn-primary"
+            href="https://api.whatsapp.com/send?phone=5521980538171&text=Ol%C3%A1%2C%20Estou%20entrando%20em%20contato%20atrav%C3%A9s%20do%20site."
+            target="_blank"
+            rel="noopener"
+          >
+            AGENDAR AGORA
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="benefits">
+    <div class="container">
+      <div class="benefits-grid">
+        <div class="benefit-card reveal">
+          <div class="benefit-icon">⚙️</div>
+          <h3>Peças Originais</h3>
+          <p>Trabalhamos com peças originais e assistência técnica de qualidade.</p>
+        </div>
+
+        <div class="benefit-card reveal">
+          <div class="benefit-icon">🛡️</div>
+          <h3>Garantia do seu serviço</h3>
+          <p>Segurança, confiança e garantia para o serviço executado.</p>
+        </div>
+
+        <div class="benefit-card reveal">
+          <div class="benefit-icon">💳</div>
+          <h3>Parcelamento no cartão de crédito</h3>
+          <p>Condições facilitadas para atendimento e pagamento.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="brands">
+    <div class="container">
+      <h2 class="section-title reveal">Trabalhamos com as melhores marcas</h2>
+      <div class="brands-image reveal">
+        <img src="assets/marcas-1024x131.png" alt="Marcas atendidas pela JM Aquecedores" loading="lazy" decoding="async" />
+      </div>
+    </div>
+  </section>
+
+  <section class="about section" id="sobre">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image reveal">
+          <img src="assets/sobre.jpg" alt="Sobre a JM Aquecedores" loading="lazy" decoding="async" />
+        </div>
+
+        <div class="about-content reveal">
+          <h2 class="section-title">Sobre a JM Aquecedores</h2>
+          <p>A JM Aquecedores tem os melhores profissionais para instalação, manutenção e assistência técnica. Já atendemos os mais diversos clientes com presteza e qualidade nos serviços. Somente trabalhamos com peças originais, temos uma das melhores garantias do mercado e parcelamos seu serviço no cartão de crédito. Abra o seu chamado agora mesmo para ter o atendimento de um de nossos técnicos.</p>
+          <h2 class="section-title" style="margin-top:22px;">Onde Atuamos?</h2>
+          <p>Atendimento no Rio de Janeiro com foco em instalação, manutenção, conversão e adequação de aquecedores e fogões.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services section" id="servicos">
+    <div class="container">
+      <h2 class="section-title reveal">Nossos Serviços</h2>
+
+      <div class="services-grid">
+        <article class="service-card reveal">
+          <div class="service-media">
+            <img src="assets/normas-naturgy.jpg" alt="Normas Naturgy" loading="lazy" decoding="async" />
+          </div>
+          <div class="service-body">
+            <h3>Normas Naturgy</h3>
+            <p>Adequação do Ambiente dentro das Normas Técnicas e de Segurança da Naturgy (antiga CEG).</p>
+            <a class="service-cta" href="https://api.whatsapp.com/send?phone=5521980538171&text=Ol%C3%A1%2C%20Estou%20entrando%20em%20contato%20atrav%C3%A9s%20do%20site." target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.52 3.48A11.85 11.85 0 0 0 12.01 0C5.49 0 .18 5.31.18 11.83c0 2.08.55 4.1 1.61 5.87L0 24l6.46-1.69a11.78 11.78 0 0 0 5.55 1.41h.01c6.52 0 11.83-5.31 11.83-11.83 0-3.16-1.23-6.13-3.46-8.41Zm-8.5 18.28h-.01a9.75 9.75 0 0 1-4.97-1.36l-.36-.21-3.83 1 1.02-3.73-.23-.38a9.76 9.76 0 0 1-1.53-5.24c0-5.39 4.39-9.78 9.79-9.78 2.61 0 5.06 1.02 6.9 2.86a9.69 9.69 0 0 1 2.87 6.91c0 5.39-4.39 9.93-9.65 9.93Zm5.64-7.27c-.31-.15-1.83-.9-2.11-1-.28-.1-.48-.15-.69.15-.2.31-.79 1-.96 1.2-.18.2-.36.22-.67.08-.31-.15-1.29-.47-2.45-1.49-.9-.81-1.52-1.82-1.7-2.12-.18-.31-.02-.48.13-.64.13-.13.31-.36.47-.53.16-.18.2-.31.31-.51.1-.2.05-.38-.02-.53-.08-.15-.67-1.62-.92-2.21-.24-.58-.48-.5-.68-.51h-.58c-.2 0-.52.08-.8.38-.28.31-1.06 1.03-1.06 2.51 0 1.47 1.08 2.9 1.23 3.1.15.2 2.12 3.24 5.12 4.53.71.31 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.83-.74 2.08-1.45.26-.71.26-1.31.18-1.45-.08-.13-.28-.21-.59-.36Z"/></svg>
+              Solicitar Serviço
+            </a>
+          </div>
+        </article>
+
+        <article class="service-card reveal">
+          <div class="service-media">
+            <img src="assets/aquecedor.jpg" alt="Aquecedores a Gás" loading="lazy" decoding="async" />
+          </div>
+          <div class="service-body">
+            <h3>Aquecedores a Gás</h3>
+            <p>Instalação, Conserto, Manutenção e Manutenção Preventiva.</p>
+            <a class="service-cta" href="https://api.whatsapp.com/send?phone=5521980538171&text=Ol%C3%A1%2C%20Estou%20entrando%20em%20contato%20atrav%C3%A9s%20do%20site." target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.52 3.48A11.85 11.85 0 0 0 12.01 0C5.49 0 .18 5.31.18 11.83c0 2.08.55 4.1 1.61 5.87L0 24l6.46-1.69a11.78 11.78 0 0 0 5.55 1.41h.01c6.52 0 11.83-5.31 11.83-11.83 0-3.16-1.23-6.13-3.46-8.41Zm-8.5 18.28h-.01a9.75 9.75 0 0 1-4.97-1.36l-.36-.21-3.83 1 1.02-3.73-.23-.38a9.76 9.76 0 0 1-1.53-5.24c0-5.39 4.39-9.78 9.79-9.78 2.61 0 5.06 1.02 6.9 2.86a9.69 9.69 0 0 1 2.87 6.91c0 5.39-4.39 9.93-9.65 9.93Zm5.64-7.27c-.31-.15-1.83-.9-2.11-1-.28-.1-.48-.15-.69.15-.2.31-.79 1-.96 1.2-.18.2-.36.22-.67.08-.31-.15-1.29-.47-2.45-1.49-.9-.81-1.52-1.82-1.7-2.12-.18-.31-.02-.48.13-.64.13-.13.31-.36.47-.53.16-.18.2-.31.31-.51.1-.2.05-.38-.02-.53-.08-.15-.67-1.62-.92-2.21-.24-.58-.48-.5-.68-.51h-.58c-.2 0-.52.08-.8.38-.28.31-1.06 1.03-1.06 2.51 0 1.47 1.08 2.9 1.23 3.1.15.2 2.12 3.24 5.12 4.53.71.31 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.83-.74 2.08-1.45.26-.71.26-1.31.18-1.45-.08-.13-.28-.21-.59-.36Z"/></svg>
+              Solicitar Serviço
+            </a>
+          </div>
+        </article>
+
+        <article class="service-card reveal">
+          <div class="service-media">
+            <img src="assets/fogao.jpg" alt="Fogões" loading="lazy" decoding="async" />
+          </div>
+          <div class="service-body">
+            <h3>Fogões</h3>
+            <p>Instalação e Conversão p/ GN ou GLP e Remanejamento de Ponto.</p>
+            <a class="service-cta" href="https://api.whatsapp.com/send?phone=5521980538171&text=Ol%C3%A1%2C%20Estou%20entrando%20em%20contato%20atrav%C3%A9s%20do%20site." target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.52 3.48A11.85 11.85 0 0 0 12.01 0C5.49 0 .18 5.31.18 11.83c0 2.08.55 4.1 1.61 5.87L0 24l6.46-1.69a11.78 11.78 0 0 0 5.55 1.41h.01c6.52 0 11.83-5.31 11.83-11.83 0-3.16-1.23-6.13-3.46-8.41Zm-8.5 18.28h-.01a9.75 9.75 0 0 1-4.97-1.36l-.36-.21-3.83 1 1.02-3.73-.23-.38a9.76 9.76 0 0 1-1.53-5.24c0-5.39 4.39-9.78 9.79-9.78 2.61 0 5.06 1.02 6.9 2.86a9.69 9.69 0 0 1 2.87 6.91c0 5.39-4.39 9.93-9.65 9.93Zm5.64-7.27c-.31-.15-1.83-.9-2.11-1-.28-.1-.48-.15-.69.15-.2.31-.79 1-.96 1.2-.18.2-.36.22-.67.08-.31-.15-1.29-.47-2.45-1.49-.9-.81-1.52-1.82-1.7-2.12-.18-.31-.02-.48.13-.64.13-.13.31-.36.47-.53.16-.18.2-.31.31-.51.1-.2.05-.38-.02-.53-.08-.15-.67-1.62-.92-2.21-.24-.58-.48-.5-.68-.51h-.58c-.2 0-.52.08-.8.38-.28.31-1.06 1.03-1.06 2.51 0 1.47 1.08 2.9 1.23 3.1.15.2 2.12 3.24 5.12 4.53.71.31 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.83-.74 2.08-1.45.26-.71.26-1.31.18-1.45-.08-.13-.28-.21-.59-.36Z"/></svg>
+              Solicitar Serviço
+            </a>
+          </div>
+        </article>
+
+        <article class="service-card reveal">
+          <div class="service-media">
+            <img src="assets/nova-tubulacao.jpg" alt="Nova Tubulação" loading="lazy" decoding="async" />
+          </div>
+          <div class="service-body">
+            <h3>Nova Tubulação</h3>
+            <p>Construção de Nova Tubulação e Teste de Estanqueidade.</p>
+            <a class="service-cta" href="https://api.whatsapp.com/send?phone=5521980538171&text=Ol%C3%A1%2C%20Estou%20entrando%20em%20contato%20atrav%C3%A9s%20do%20site." target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.52 3.48A11.85 11.85 0 0 0 12.01 0C5.49 0 .18 5.31.18 11.83c0 2.08.55 4.1 1.61 5.87L0 24l6.46-1.69a11.78 11.78 0 0 0 5.55 1.41h.01c6.52 0 11.83-5.31 11.83-11.83 0-3.16-1.23-6.13-3.46-8.41Zm-8.5 18.28h-.01a9.75 9.75 0 0 1-4.97-1.36l-.36-.21-3.83 1 1.02-3.73-.23-.38a9.76 9.76 0 0 1-1.53-5.24c0-5.39 4.39-9.78 9.79-9.78 2.61 0 5.06 1.02 6.9 2.86a9.69 9.69 0 0 1 2.87 6.91c0 5.39-4.39 9.93-9.65 9.93Zm5.64-7.27c-.31-.15-1.83-.9-2.11-1-.28-.1-.48-.15-.69.15-.2.31-.79 1-.96 1.2-.18.2-.36.22-.67.08-.31-.15-1.29-.47-2.45-1.49-.9-.81-1.52-1.82-1.7-2.12-.18-.31-.02-.48.13-.64.13-.13.31-.36.47-.53.16-.18.2-.31.31-.51.1-.2.05-.38-.02-.53-.08-.15-.67-1.62-.92-2.21-.24-.58-.48-.5-.68-.51h-.58c-.2 0-.52.08-.8.38-.28.31-1.06 1.03-1.06 2.51 0 1.47 1.08 2.9 1.23 3.1.15.2 2.12 3.24 5.12 4.53.71.31 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.83-.74 2.08-1.45.26-.71.26-1.31.18-1.45-.08-.13-.28-.21-.59-.36Z"/></svg>
+              Solicitar Serviço
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact section" id="contato">
+    <div class="container">
+      <h2 class="section-title reveal">Contato</h2>
+
+      <div class="contact-grid">
+        <div class="contact-item reveal">
+          <div class="contact-icon">📍</div>
+          <div class="contact-text">
+            <h3>Avenida das Américas, 1000, Barra da Tijuca Rio de Janeiro, RJ . CEP 22640-110</h3>
+          </div>
+        </div>
+
+        <div class="contact-item reveal">
+          <div class="contact-icon">📞</div>
+          <div class="contact-text">
+            <h3>(21) 98053-8171 / 98346-2349</h3>
+          </div>
+        </div>
+
+        <div class="contact-item reveal">
+          <div class="contact-icon">🕒</div>
+          <div class="contact-text">
+            <h3>Segunda à Sábado das 8h às 20h</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <img src="assets/logo-footer-white.png" alt="JM Aquecedores" />
+      <p>Copyright JM Aquecedores – Todos os Direitos Reservados</p>
+    </div>
+  </footer>
+
+  <a
+    class="whatsapp-button"
+    href="https://api.whatsapp.com/send?phone=5521980538171&text=Ol%C3%A1%2C%20Estou%20entrando%20em%20contato%20atrav%C3%A9s%20do%20site."
+    target="_blank"
+    rel="noopener"
+    aria-label="WhatsApp"
+  >
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M20.52 3.48A11.85 11.85 0 0 0 12.01 0C5.49 0 .18 5.31.18 11.83c0 2.08.55 4.1 1.61 5.87L0 24l6.46-1.69a11.78 11.78 0 0 0 5.55 1.41h.01c6.52 0 11.83-5.31 11.83-11.83 0-3.16-1.23-6.13-3.46-8.41Zm-8.5 18.28h-.01a9.75 9.75 0 0 1-4.97-1.36l-.36-.21-3.83 1 1.02-3.73-.23-.38a9.76 9.76 0 0 1-1.53-5.24c0-5.39 4.39-9.78 9.79-9.78 2.61 0 5.06 1.02 6.9 2.86a9.69 9.69 0 0 1 2.87 6.91c0 5.39-4.39 9.93-9.65 9.93Zm5.64-7.27c-.31-.15-1.83-.9-2.11-1-.28-.1-.48-.15-.69.15-.2.31-.79 1-.96 1.2-.18.2-.36.22-.67.08-.31-.15-1.29-.47-2.45-1.49-.9-.81-1.52-1.82-1.7-2.12-.18-.31-.02-.48.13-.64.13-.13.31-.36.47-.53.16-.18.2-.31.31-.51.1-.2.05-.38-.02-.53-.08-.15-.67-1.62-.92-2.21-.24-.58-.48-.5-.68-.51h-.58c-.2 0-.52.08-.8.38-.28.31-1.06 1.03-1.06 2.51 0 1.47 1.08 2.9 1.23 3.1.15.2 2.12 3.24 5.12 4.53.71.31 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.83-.74 2.08-1.45.26-.71.26-1.31.18-1.45-.08-.13-.28-.21-.59-.36Z"/>
+    </svg>
+  </a>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const nav = document.getElementById('nav');
+    const header = document.getElementById('header');
+
+    menuToggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav a').forEach((link) => {
+      link.addEventListener('click', () => nav.classList.remove('active'));
+    });
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 8) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    }, { passive: true });
+
+    const revealEls = document.querySelectorAll('.reveal:not(.active)');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.14,
+      rootMargin: '0px 0px -60px 0px'
+    });
+
+    revealEls.forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html>
